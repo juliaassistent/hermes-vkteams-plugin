@@ -1,0 +1,37 @@
+name: vkteams-platform
+label: VK Teams (Среда)
+kind: platform
+version: 1.0.0
+description: >
+  VK Teams (Среда) gateway adapter for Hermes Agent.
+  Long-polling bot integration: receives messages via events/get,
+  sends text with format-styles (bold, italic, links, quotes, lists,
+  code blocks), edits and deletes messages, shows typing indicator.
+  Ported from the OpenClaw vkteams channel plugin.
+author: Ermil
+requires_env:
+  - name: VKTEAMS_TOKEN
+    description: "VK Teams bot token (format: 001.<app>.<key>:<botUserId>)"
+    prompt: "VK Teams bot token"
+    password: true
+optional_env:
+  - name: VKTEAMS_API_BASE_URL
+    description: "VK Teams Bot API base URL (default: https://api.icq.net/bot/v1)"
+    prompt: "API base URL (or empty for default)"
+    password: false
+  - name: VKTEAMS_ALLOWED_USERS
+    description: "Comma-separated VK Teams user IDs (sn@domain or numeric) allowed to talk to the bot"
+    prompt: "Allowed user IDs (comma-separated)"
+    password: false
+  - name: VKTEAMS_ALLOW_ALL_USERS
+    description: "Allow any user to talk to the bot (dev only — disables allowlist)"
+    prompt: "Allow all users? (true/false)"
+    password: false
+  - name: VKTEAMS_HOME_CHANNEL
+    description: "Default chat ID for cron / notification delivery"
+    prompt: "Home channel chat ID (or empty)"
+    password: false
+  - name: VKTEAMS_POLL_TIME
+    description: "Long-poll seconds per events/get request (default: 30)"
+    prompt: "Poll time in seconds (default 30)"
+    password: false
